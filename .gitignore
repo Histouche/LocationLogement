@@ -1,5 +1,6 @@
 .vagrant/
-.idea/
+composer.json
+composer.lock
 vendor/
 config/development.config.php
 data/cache/*
