@@ -1,4 +1,4 @@
-body {}
+body {padding-top: 65px;}
 .zf-blue {
     color: #2e6da4;
 }
@@ -20,21 +20,27 @@ div.container a.navbar-brand > img {
 /* general */
 .color-w{color: #fff;}
 /* Header */
-.navbar{background: #3F51B5;}
+.navbar{background: #3F51B5;height: 65px;position: fixed;top:0;z-index: 10;}
 .user-link{transition: all linear .2s;background-color: transparent;border-radius:2px;padding: 5px 10px;}
 .user-link:hover{background-color: rgba(255,255,255, .2);color: #fff;}
 
 .navigation-trigger{margin-right: 0 !important;}
-.navigation-btn{position: relative;width: 18px;transition: all .3s;}
+.navigation-btn{position: relative;width: 18px;transition: all .3s;cursor: pointer;}
 .navigation-btn:before{content: ' ';position: absolute;width: 40px;height: 40px;left: -11px;top: -14px;
     background-color: rgba(255,255,255,.25);border-radius: 50%;transition: all .3s;-webkit-transform: scale(0);transform: scale(0);}
-.navigation-btn-line{height: 2px;background-color: #fff; display: block;position: relative;}
+.navigation-btn-line{height: 2px;background-color: #fff; display: block;position: relative;transition: all ease .3s;}
 .navigation-btn-line:not(:last-child){margin-bottom: 3px;}
 .navigation-trigger.toggle .navigation-btn:before{-webkit-transform: scale(1);transform: scale(1);}
 .navigation-trigger.toggle .navigation-btn .navigation-btn-line:first-child{width: 12px;-webkit-transform: translateX(8px) translateY(1px) rotate(45deg);
     transform: translateX(8px) translateY(1px) rotate(45deg);}
-.navigation-trigger.toggle .navigation-btn:last-child{width: 11px;-webkit-transform: translateX(8px) translateY(-1px) rotate(-45deg);
+.navigation-trigger.toggle .navigation-btn .navigation-btn-line:last-child{width: 11px;-webkit-transform: translateX(8px) translateY(-1px) rotate(-45deg);
     transform: translateX(8px) translateY(-1px) rotate(-45deg);}
+.lateral-menu{background-color: #FFF;transition: opacity .3s,-webkit-transform .3s;transition: transform .3s,opacity .3s;
+    transition: transform .3s,opacity .3s,-webkit-transform .3s;width: 270px; position: fixed;right: 0; padding: 102px 2rem .5rem;
+    height: 100%; overflow: hidden;z-index: 9;opacity: 0;-webkit-transform: translate3d(100%,0,0); transform: translate3d(100%,0,0);}
+.lateral-menu.toggled{box-shadow: 5px 0 10px rgba(0,0,0,.08); opacity: 1; -webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0);}
+
+
 
 /* map */
 svg path{fill: #074c73 ;stroke: #ccc;transition: all linear 0.2s;cursor: pointer;}
