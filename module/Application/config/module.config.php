@@ -27,19 +27,30 @@ return [
             'application' => [
                 'type'    => Segment::class,
                 'options' => [
-                    'route'    => '/application[/:action]',
+                    'route'    => '/[/:action]',
                     'defaults' => [
                         'controller' => Controller\IndexController::class,
                         'action'     => 'index',
                     ],
                 ],
             ],
+            /*'list' => [
+                'type'    => Segment::class,
+                'options' => [
+                    'route'    => '/[/:action]',
+                    'defaults' => [
+                        'controller' => Controller\ListController::class,
+                        'action'     => 'index',
+                    ],
+                ],
+            ],*/
         ],
     ],
     'controllers' => [
         'factories' => [
             Controller\IndexController::class => InvokableFactory::class,
-        ],
+            Controller\ListController::class => InvokableFactory::class,
+            ],
     ],
     'view_manager' => [
         'display_not_found_reason' => true,
@@ -52,6 +63,7 @@ return [
             'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
+            'application/list/index'  => __DIR__ . '/../view/application/list/index.phtml',
         ],
         'template_path_stack' => [
             __DIR__ . '/../view',
