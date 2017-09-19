@@ -1,1 +1,93 @@
-aaa
+<div class="col-12 recherche p-0">
+    <div class="container pb-5">
+        <div class="col-12">
+            <div class="row">
+                <h2 class="col-12 text-uppercase">Recherche Rapide</h2>
+                <div class="col-md-3 col-lg-2">
+                    <div class="row m-0">
+                        <div class="text-uppercase search-cat-title col-12 pl-0">1. Type</div>
+                        <div class="col-12 type-choice">
+                            <div class="col-12 box">
+                                <input type="checkbox" name="appartement" id="appartement">
+                                <label for="appartement" class="col-12 m-0 text-center">
+                                    <span style="font-size :40px !important;" class="icon-appartement col-xs-12 padding-top-10"></span>
+                                    <span class="col-12 search-box-span">Appartement</span>
+                                </label>
+                            </div>
+                            <hr>
+                            <div class="col-12 box">
+                                <input type="checkbox" name="maison" id="maison">
+                                <label for="maison" class="col-12 m-0 text-center">
+                                    <span style="font-size :35px !important;" class="icon-maison col-xs-12 padding-top-10"></span>
+                                    <span class="col-12 search-box-span">Maison</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4 col-xl-3">
+                    <div class="row m-0">
+                        <div class="text-uppercase search-cat-title col-12 pl-0">2. Loyer & Surface</div>
+                        <div class="loyer-choice col-12">
+                            <div class="row">
+                                <small class="col-6 pl-0 text-right text-uppercase search-cat-title">Loyer entre</small>
+                                <div class="col-6 p-0 mb-3"><input class="col-12" type="number" step="10" name="loyer-min" min="0" placeholder="Loyer min."></div>
+                                <small class="col-6 pl-0 text-right text-uppercase search-cat-title">et</small>
+                                <div class="col-6 p-0 mb-3"><input class="col-12" type="number" step="10" name="loyer-max" min="0" placeholder="Loyer max."></div>
+                            </div>
+                        </div>
+                        <div class="loyer-choice col-12">
+                            <div class="row">
+                                <small class="col-6 pl-0 text-right text-uppercase search-cat-title">Surface entre</small>
+                                <div class="col-6 p-0 mb-3"><input class="col-12" type="number" step="5" name="surface-min" min="0" placeholder="Surface min."></div>
+                                <small class="col-6 pl-0 text-right text-uppercase search-cat-title">et</small>
+                                <div class="col-6 p-0"><input class="col-12" type="number" step="5" name="surface-max" min="0" placeholder="Surface max."></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4 col-xl-3">
+                    <div class="row m-0">
+                        <div class="text-uppercase search-cat-title col-12 pl-0">3. Nb pièces & meublage</div>
+                        <div class="loyer-choice col-12">
+                            <div class="row">
+                                <small class="col-6 pl-0 text-right text-uppercase search-cat-title">Pièces entre</small>
+                                <div class="col-6 p-0 mb-3"><input class="col-12" type="number" name="pieces-min" min="0" placeholder="Pièces min."></div>
+                                <small class="col-6 pl-0 text-right text-uppercase search-cat-title">et</small>
+                                <div class="col-6 p-0"><input class="col-12" type="number" name="pieces-max" min="0" placeholder="Pièces max."></div>
+                            </div>
+                        </div>
+                        <div class="loyer-choice col-12">
+                            <div class="row">
+                                <small class="col-6 pl-0 text-right text-uppercase search-cat-title">Meublé</small>
+                                <div class="col-6 p-0 mb-3"><input class="" type="checkbox" name="meuble"></div>
+                                <small class="col-6 pl-0 text-right text-uppercase search-cat-title">Non meublé</small>
+                                <div class="col-6 p-0"><input class="" type="checkbox" name="non-meuble"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2 py-3">
+                    <input type="submit" class="col-12" value="Rechercher">
+                </div>
+                <div class="col-12" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingOne">
+                            <h5 class="mb-0">
+                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <i class="fa fa-plus" aria-hidden="true"></i> Plus de critères
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="card-block">
+                                aaa
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

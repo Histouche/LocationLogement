@@ -47,15 +47,51 @@ div.container a.navbar-brand > img {
     transition: transform .3s,opacity .3s,-webkit-transform .3s;width: 270px; position: fixed;right: 0; padding: 102px 2rem .5rem;
     height: 100%; overflow: hidden;z-index: 9;opacity: 0;-webkit-transform: translate3d(100%,0,0); transform: translate3d(100%,0,0);}
 .lateral-menu.toggled{box-shadow: 0 5px 10px rgba(0,0,0,.08); opacity: 1; -webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0);}
-.user__info {display: -webkit-box; display: -ms-flexbox;display: flex;-webkit-box-orient: horizontal;-webkit-box-direction: normal;
+.user__info {margin-bottom: 15px;display: -webkit-box; display: -ms-flexbox;display: flex;-webkit-box-orient: horizontal;-webkit-box-direction: normal;
     -ms-flex-direction: row;flex-direction: row;-webkit-box-align: center;-ms-flex-align: center;align-items: center;
     cursor: pointer;font-size: .8rem;padding: .8rem;transition: background-color .3s;background-color: rgba(0,0,0,.03);}
 .user__info:hover{background-color: rgba(0,0,0,.07);}
 .user__img{width: 3rem;border-radius: 50%;margin-right: 10px;float:left;}
 .user__name{color: #000;font-weight: 500;}
 .user__email{color: #969696;}
+.navigation>li{list-style: none;}
+.navigation>li>a { padding: .85rem .5rem;border-radius: 2px;text-decoration: none;color: #707070;width: 100%;float:left;transition: all .3s;}
+.navigation>li>a>i {vertical-align: top; font-size: 1.3rem; position: relative; top: .1rem; width: 1.5rem; text-align: center;
+    margin-right: .6rem;}
+.navigation>li>a:hover{ background-color: rgba(0,0,0,.03);color: #3F51B5;}
 
 /* map */
 svg path{fill: #3F51B5 ;stroke: rgb(115, 188, 247) ;transition: all linear 0.2s;cursor: pointer;}
 svg path:hover{ fill: #8cbdd8;}
 svg a{cursor : pointer;}
+
+/*
+* Recherche
+ */
+.recherche{background: url('https://altitude-realty.com/altitude-realty/img/ESB.jpg') center no-repeat;background-size: cover;}
+.recherche:before{content: "";position: absolute;width: 100%;height: 100%;left: 0;background-color: rgba(63, 81, 181, 0.8);z-index: 0;}
+.recherche h2{color: #fff;margin-top: 25px;}
+.recherche .search-cat-title{color: #fff;margin-bottom: 3px;}
+.recherche .type-choice{background-color: #fff;}
+.recherche .box{padding: 0;}
+.recherche .type-choice hr{margin: 5px 0;}
+.recherche .type-choice input[type="checkbox"]{display: none;}
+.recherche .type-choice label{padding:10px 5px;color: #999;cursor: pointer;font-size: 20px;}
+.recherche .search-box-span{font-size: 13px;float:left;}
+.recherche .loyer-choice{padding-left: 0px;}
+.recherche .loyer-choice small{padding-right: 5px;padding-top: 5px;}
+.recherche input[type="number"]{padding-right: 0;padding-left:10px;}
+.recherche input[type="number"]::placeholder{font-size: 12px;}
+.recherche .loyer-choice input[type="checkbox"]{position: relative; /*top: -0.375rem;*/ margin: 0 1rem 0 0;cursor: pointer;left:5px;top:3px;}
+.recherche .loyer-choice input[type="checkbox"]:before{-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;content: "";position: absolute;left: 0;z-index: 1;width: 1rem;height: 1rem;border: 2px solid #fff;}
+.recherche .loyer-choice input[type="checkbox"]:checked:before{ -webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg);transform: rotate(-45deg);height: .5rem; border-color: #3F51B5;
+    border-top-style: none; border-right-style: none;}
+.recherche .loyer-choice input[type="checkbox"]:after{content: ""; position: absolute;top: -0.125rem;left: 0; width: 1.1rem;
+    height: 1.1rem; background: #fff; cursor: pointer;}
+.recherche input[type="submit"]{text-transform: uppercase;color: #fff;background-color: #ff5652; border: 2px solid #ff5652;
+    padding: 30px 5px; font-size: 13px;}
+.recherche #accordion .card{border-radius: 0;border: none;background-color: transparent;}
+.recherche #accordion .card .card-header{color: #fff;background-color: transparent;border: none;padding-left: 0;}
+.recherche #accordion .card .card-header a{color: #fff;text-decoration: none;}

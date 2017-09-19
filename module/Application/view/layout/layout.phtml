@@ -13,6 +13,7 @@
         <!-- Les styles -->
         <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'])
             ->prependStylesheet($this->basePath('css/style.css'))
+            ->prependStylesheet($this->basePath('css/icons.css'))
             ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
             ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
             ->prependStylesheet($this->basePath('library/font-awesome-4.7.0/css/font-awesome.css'))
@@ -59,10 +60,16 @@
                             <div class="user__email">j.rodrigues@alphalives.com</div>
                         </div>
                     </div>
+                    <ul class="navigation p-0">
+                        <li><a href="/home"> <i class="fa fa-home" aria-hidden="true"></i> Accueil</a></li>
+                        <li><a href="/moncompte"> <i class="fa fa-user" aria-hidden="true"></i> Mon compte</a></li>
+                        <li><a href="/annonces-marques"> <i class="fa fa-bookmark" aria-hidden="true"></i>Mes annonces marqués</a></li>
+                        <li><a href="/login"> <i class="fa fa-power-off" aria-hidden="true"></i>Déconnexion</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container-fluid p-0">
             <?= $this->content ?>
         </div>
         <footer class="container-fluid">

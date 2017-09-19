@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon.eot');
+    src:  url('fonts/icomoon.eot') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf') format('truetype'),
+    url('fonts/icomoon.woff') format('woff'),
+    url('fonts/icomoon.svg?') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-notre-equipe:before {
+    content: "\e910";
+}
+.icon-appartement:before {
+    content: "\e900";
+}
+.icon-canada:before {
+    content: "\e901";
+}
+.icon-chambre:before {
+    content: "\e902";
+}
+.icon-conseils:before {
+    content: "\e903";
+}
+.icon-contact:before {
+    content: "\e904";
+}
+.icon-earth:before {
+    content: "\e905";
+}
+.icon-etats-unis:before {
+    content: "\e906";
+}
+.icon-group:before {
+    content: "\e907";
+}
+.icon-immeuble:before {
+    content: "\e908";
+}
+.icon-infos-legales:before {
+    content: "\e909";
+}
+.icon-investissement-haut-de-gamme:before {
+    content: "\e90a";
+}
+.icon-investissement-locatif:before {
+    content: "\e90b";
+}
+.icon-main:before {
+    content: "\e90c";
+}
+.icon-maison:before {
+    content: "\e90d";
+}
+.icon-map:before {
+    content: "\e90e";
+}
+.icon-nos-produits:before {
+    content: "\e90f";
+}
+.icon-penthouse:before {
+    content: "\e911";
+}
+.icon-salle-de-bain:before {
+    content: "\e912";
+}
+.icon-surface:before {
+    content: "\e913";
+}
+.icon-townhouse:before {
+    content: "\e914";
+}
+.icon-villa:before {
+    content: "\e915";
+}
+
