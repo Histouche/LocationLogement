@@ -35,7 +35,7 @@ div.container a.navbar-brand > img {
     transform: translateX(8px) translateY(1px) rotate(45deg);}
 .navigation-trigger.toggle .navigation-btn .navigation-btn-line:last-child{width: 11px;-webkit-transform: translateX(8px) translateY(-1px) rotate(-45deg);
     transform: translateX(8px) translateY(-1px) rotate(-45deg);}
-.lateral-menu{background-color: #FFF;transition: opacity .3s,-webkit-transform .3s;transition: transform .3s,opacity .3s;
+.lateral-menu{top: 0;background-color: #FFF;transition: opacity .3s,-webkit-transform .3s;transition: transform .3s,opacity .3s;
     transition: transform .3s,opacity .3s,-webkit-transform .3s;width: 270px; position: fixed;right: 0; padding: 102px 2rem .5rem;
     height: 100%; overflow: hidden;z-index: 9;opacity: 0;-webkit-transform: translate3d(100%,0,0); transform: translate3d(100%,0,0);}
 .lateral-menu.toggled{box-shadow: 5px 0 10px rgba(0,0,0,.08); opacity: 1; -webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0);}
