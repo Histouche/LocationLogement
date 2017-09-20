@@ -98,7 +98,30 @@ svg a{cursor : pointer;}
 
 .result-link{text-decoration: none !important;}
 .result-box{color: #1d1e1f;background-color: #f2f2f2;cursor: pointer;}
-.result-box i{color: #ff5652;margin-right: 3px;}
-.result-box .libelle{color: #3F51B5;font-size: 22px;font-weight: 600;}
+.result-box i, .fiche .general-desc i{width: 20px;text-align: right;color: #ff5652;margin-right: 3px;}
+.result-box .libelle, .fiche .libelle{color: #3F51B5;font-size: 22px;font-weight: 600;}
 .result-box .col-6{font-size: 18px;}
 .result-box hr{margin: 0;margin-bottom: 8px;border-top: 1px solid #fff;}
+
+/*
+* Fiche
+ */
+.tools{background-color: #7185f7;color: #fff;padding: 15px 0;}
+.tools a{color: #fff;}
+
+.fiche .general-desc{background-color: #f2f2f2;}
+
+.contact{background-color: #f2f2f2;}
+.contact .title{color: #7185f7;font-weight: 600;}
+.contact .contact-text{padding: 2px 5px 2px 30px;}
+.contact .fa{position: absolute;left: 25px;top: 10px;color: #aaa;}
+.contact .contact-text::placeholder{font-size: 13px;}
+.contact .contact-submit{background-color: #ff5652;color: #fff;border: 1px solid #ff5652;cursor: pointer;}
+.contact small{font-size: 0.6em;}
+
+.social-link{float:left;}
+.f-link .fa-circle{color: #365899;}
+.f-link .fa-facebook{padding-top: 3px;}
+.t-link{color: #1da1f2;}
+.t-link .fa-twitter{padding-top: 3px;}
+.g-link .fa-google-plus-circle{color: #dd4b39;}
