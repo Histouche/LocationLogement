@@ -24,5 +24,29 @@ class IndexController extends AbstractActionController
     {
         return new ViewModel();
     }
+    public function adminAction()
+    {
+        return new ViewModel();
+    }
+    public function listAdminAction()
+    {
+        return new ViewModel();
+    }
+    public function ajoutAdminAction()
+    {
+        return new ViewModel();
+    }
+    public function modifAdminAction()
+    {
+        return new ViewModel();
+    }
+    public function supprAdminAction()
+    {
+        return new ViewModel();
+    }
+    public function validFormAction()
+    {
+        return new ViewModel();
+    }
 
 }

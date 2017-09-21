@@ -1,0 +1,29 @@
+<?php
+
+echo 'titre: '.$_POST['titre'].'<br>';
+echo 'image: '.$_POST['image'].'<br>';
+echo 'adresse: '.$_POST['adresse'].'<br>';
+echo 'ville: '.$_POST['ville'].'<br>';
+echo 'cp: '.$_POST['cp'].'<br>';
+echo 'surface: '.$_POST['surface'].'<br>';
+echo 'nbpiece: '.$_POST['nbpiece'].'<br>';
+echo 'meuble: '.$_POST['meuble'].'<br>';
+echo 'prix: '.$_POST['prix'].'<br>';
+echo 'description: '.$_POST['description'].'<br>';
+echo 'region: '.$_POST['region'].'<br>';
+echo 'type: '.$_POST['type'].'<br>';
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "locationlogement";
+
+$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$sql = "INSERT INTO logement (logement_titre, logement_image, logement_adresse, logement_ville, logement_cp, logement_surface, logement_nb_piece, logement_meuble, logement_prix, logement_description, logement_region, logementnt_type)
+    VALUES ('".$_POST['titre']."', '".$_POST['image']."', '".$_POST['adresse']."', '".$_POST['ville']."', '".$_POST['cp']."', '".$_POST['surface']."', '".$_POST['nbpiece']."', '".$_POST['meuble']."', '".$_POST['prix']."', '".$_POST['description']."', '".$_POST['region']."', '".$_POST['type']."')";
+$conn->exec($sql);
+
+
+
+?>

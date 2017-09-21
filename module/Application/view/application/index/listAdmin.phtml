@@ -1,0 +1,37 @@
+<?php session_start() ?>
+
+<div class="col-12">
+    <div class="col-4">
+        <a class="btn btn-success" href="ajoutadmin" role="button"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp Ajouter un logement</a>
+    </div>
+</div>
+<table id="data-table" class="table table-bordered dataTable" role="grid" aria-describedby="data-table_info">
+    <thead class="thead-default">
+        <tr role="row">
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="titre">Numéro</th>
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="titre">Titre</th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="region">Région</th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="type">Type de bien</th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="ville">Ville</th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="prix">Prix</th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="action">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+    $bdd = new PDO('mysql:host=localhost;dbname=locationlogement;charset=utf8', 'root', '');
+    $reponse = $bdd->query('SELECT * FROM logement');
+    while ($donnees = $reponse->fetch()){?>
+        <tr role="row" class="odd">
+                <td><?= $donnees['logement_id']; ?><?php $_SESSION['id'] = $donnees['logement_id']; ?></td>
+                <td><?= $donnees['logement_titre'] ?></td>
+                <td><?= $donnees['logement_region']; ?></td>
+                <td><?= $donnees['logementnt_type']; ?></td>
+                <td><?= $donnees['logement_ville']; ?></td>
+                <td><?= $donnees['logement_prix'].'€'; ?></td>
+                <td><a href="modifadmin"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                <a href="suppradmin"><i class="fa fa-times" aria-hidden="true"></i></a></td>
+        </tr>
+    <?php } ?>
+    </tbody>
+</table>

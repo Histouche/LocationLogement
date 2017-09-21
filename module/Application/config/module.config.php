@@ -50,6 +50,12 @@ return [
         'factories' => [
             Controller\IndexController::class => InvokableFactory::class,
             Controller\ListController::class => InvokableFactory::class,
+            Controller\AdminController::class => InvokableFactory::class,
+            Controller\ListAdminController::class => InvokableFactory::class,
+            Controller\AjoutAdminController::class => InvokableFactory::class,
+            Controller\ModifAdminController::class => InvokableFactory::class,
+            Controller\SupprAdminController::class => InvokableFactory::class,
+            Controller\ValidFormController::class => InvokableFactory::class,
             ],
     ],
     'view_manager' => [
