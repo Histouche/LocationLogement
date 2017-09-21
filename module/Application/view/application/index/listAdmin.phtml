@@ -1,5 +1,3 @@
-<?php session_start() ?>
-
 <div class="col-12">
     <div class="col-4">
         <a class="btn btn-success" href="ajoutadmin" role="button"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp Ajouter un logement</a>
@@ -23,15 +21,15 @@
     $reponse = $bdd->query('SELECT * FROM logement');
     while ($donnees = $reponse->fetch()){?>
         <tr role="row" class="odd">
-                <td><?= $donnees['logement_id']; ?><?php $_SESSION['id'] = $donnees['logement_id']; ?></td>
+                <td><?= $donnees['logement_id']; ?></td>
                 <td><?= $donnees['logement_titre'] ?></td>
                 <td><?= $donnees['logement_region']; ?></td>
                 <td><?= $donnees['logementnt_type']; ?></td>
                 <td><?= $donnees['logement_ville']; ?></td>
                 <td><?= $donnees['logement_prix'].'€'; ?></td>
-                <td><a href="modifadmin"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                <a href="suppradmin"><i class="fa fa-times" aria-hidden="true"></i></a></td>
-        </tr>
+                <td><a href= "modifadmin?id=<?= $donnees['logement_id'];?>"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                <a href="<?= "suppradmin?id=".$donnees['logement_id'];?>"><i class="fa fa-times" aria-hidden="true"></i></a></td>
+</tr>
     <?php } ?>
     </tbody>
 </table>
