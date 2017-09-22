@@ -5,7 +5,7 @@ $username = "root";
 $password = "";
 $dbname = "locationlogement";
 
-$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+$conn = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8", $username, $password);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $sql = "INSERT INTO logement (logement_titre, logement_image, logement_adresse, logement_ville, logement_cp, logement_surface, logement_nb_piece, logement_meuble, logement_prix, logement_description, logement_region, logementnt_type)
     VALUES ('".$_POST['titre']."', '".$_POST['image']."', '".$_POST['adresse']."', '".$_POST['ville']."', '".$_POST['cp']."', '".$_POST['surface']."', '".$_POST['nbpiece']."', '".$_POST['meuble']."', '".$_POST['prix']."', '".$_POST['description']."', '".$_POST['region']."', '".$_POST['type']."')";
