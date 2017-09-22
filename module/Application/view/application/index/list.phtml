@@ -81,6 +81,15 @@
                 <div class="col-12 col-md-6">
                     <select>
                         <option disabled selected>Changer de région</option>
+                        <option>Auvergne-Rhône-Alpes</option><option>Bourgogne-Franche-Comté</option>
+                        <option>Bretagne</option><option>Centre-Val de Loire</option>
+                        <option>Corse</option><option>Grand Est</option>
+                        <option>Hauts-de-France</option><option>Île-de-France</option>
+                        <option>Normandie</option><option>Nouvelle-Aquitaine</option>
+                        <option>Occitanie</option><option>Pays de la Loire</option>
+                        <option>Provence-Alpes-Côte d'Azur</option><option>Guadeloupe</option>
+                        <option>Guyane</option><option>Martinique</option>
+                        <option>La Réunion</option><option>Mayotte</option>
                     </select>
                 </div>
             </div>
@@ -88,35 +97,41 @@
         </div>
     </div>
 </div>
+<?php
+
+$bdd = new PDO('mysql:host=localhost;dbname=locationlogement;charset=utf8', 'root', '');
+    $reponse = $bdd->query('SELECT * FROM logement');
+    while ($donnees = $reponse->fetch()){?>
+
 <div class="results col-12 p-0 mt-5">
     <div class="container">
         <div class="col-12">
             <div class="row">
-                <a href="/application/fiche" class="col-12 p-0 result-link">
+                <a href="/application/fiche?id=<?= $donnees['logement_id'];?>" class="col-12 p-0 result-link">
                     <div id="programme-liste-1" class="col-12 flex result-box row mb-4 pl-0" style="height: 277px;">
                         <div class="col-12 col-sm-4 float-left search-img" style="background : url('http://www.eiffage-immobilier.fr/files/live/sites/eiffage-immo/files/contributed/visuels-programmes/appartement-neuf-nice-stella-rocca-diapo4.jpg') center no-repeat;background-size:cover;"></div>
                         <span style="color: #3F51B5;font-size :40px !important;position: absolute;right:15px;top:15px;" class="icon-appartement padding-top-10"></span>
                         <div class="col-12 col-sm-8 float-left details p-3">
                             <div class="row m-0">
                                 <div class="p-0 col-12">
-                                    <small class="col-12 no-padding txt-left p-0">Appartement</small>
-                                    <p class="libelle col-12 no-padding p-0">Nom du bien</p>
+                                    <small class="col-12 no-padding txt-left p-0"><?= $donnees['logementnt_type']?></small>
+                                    <p class="libelle col-12 no-padding p-0"><?php $donnees['logement_titre']?></p>
                                 </div>
                             </div>
                             <hr>
                             <div class="row flex">
                                 <div class="col-lg-8 col-12 row ">
                                     <div class="col-6 no-padding txt-left">
-                                        <label class="flex"><i class="fa fa-map-marker" aria-hidden="true"></i> Paris 20 (75020)</label>
+                                        <label class="flex"><i class="fa fa-map-marker" aria-hidden="true"></i> <?= $donnees['logement_ville'] ?> (<?= $donnees['logement_cp'] ?>)</label>
                                     </div>
                                     <div class="col-6 no-padding txt-left">
-                                        <label> <i class="fa fa-arrows-alt" aria-hidden="true"></i> 30m²</label>
+                                        <label> <i class="fa fa-arrows-alt" aria-hidden="true"></i> <?= $donnees['logement_surface'] ?>m²</label>
                                     </div>
                                     <div class="col-6 no-padding txt-left">
-                                        <label> <i class="fa fa-eur" aria-hidden="true"></i> 890 C.C</label>
+                                        <label> <i class="fa fa-eur" aria-hidden="true"></i> <?= $donnees['logement_prix'] ?> C.C</label>
                                     </div>
                                     <div class="col-6 no-padding txt-left">
-                                        <label> <i class="fa fa-bed" aria-hidden="true"></i>1 pièce</label>
+                                        <label> <i class="fa fa-bed" aria-hidden="true"></i><?= $donnees['logement_nb_piece'] ?> pièce</label>
                                     </div>
                                 </div>
                             </div>
@@ -127,3 +142,5 @@
         </div>
     </div>
 </div>
+
+<?php } ?>
