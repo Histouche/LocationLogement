@@ -9,10 +9,13 @@ $mdp = $donnees['user_mdp'];
 $avatar = $donnees['user_avatar'];
 
 if($mail == $_POST['email'] && $mdp == $_POST['password']){ ?>
-Bonjour <?= $prenom.' '.$nom ?><br>
-<a class="btn btn-success" href="listadmin" role="button">Aller à la liste des logements</a>
+<div class="col-12 d-flex py-5">
+    <div class="float-left col-auto m-auto">
+    <div class="col-12 text-center pb-3">Bonjour <?= $prenom.' '.$nom ?><br></div>
+    <a class="btn btn-success" href="listadmin" role="button">Aller à la liste des logements</a>
 <?php } else { ?>
-<a class="btn btn-success" href="admin" role="button">L'identifiant et/ou le mot de passe n'est pas correct, veuillez-vous reconnecter.</a>
+    <a class="btn btn-success" href="admin" role="button">L'identifiant et/ou le mot de passe n'est pas correct, veuillez-vous reconnecter.</a>
 <?php } ?>
+    </div>
+</div>
 <?php }?>
-
