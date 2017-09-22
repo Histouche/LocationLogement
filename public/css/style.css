@@ -127,12 +127,18 @@ svg a{cursor : pointer;}
 .contact .contact-text{padding: 2px 5px 2px 30px;}
 .contact .fa{position: absolute;left: 25px;top: 10px;color: #aaa;}
 .contact .contact-text::placeholder{font-size: 13px;}
-.contact .contact-submit{background-color: #ff5652;color: #fff;border: 1px solid #ff5652;cursor: pointer;}
+.contact .contact-submit{background-color: #ff5652;color: #fff;border: 1px solid #ff5652;cursor: pointer;padding: 3px 15px;}
 .contact small{font-size: 0.6em;}
 
-.social-link{float:left;}
+
 .f-link .fa-circle{color: #365899;}
 .f-link .fa-facebook{padding-top: 3px;}
 .t-link{color: #1da1f2;}
 .t-link .fa-twitter{padding-top: 3px;}
 .g-link .fa-google-plus-circle{color: #dd4b39;}
+
+/*
+* Admin
+ */
+#data-table tbody tr:nth-child(odd){background-color: #f2f2f2;}
+#data-table tbody tr td{padding: 1rem 1.5rem;vertical-align: top;border-top: 1px solid #f2f2f2;}
