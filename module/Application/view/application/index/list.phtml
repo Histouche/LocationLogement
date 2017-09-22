@@ -102,7 +102,6 @@
 $bdd = new PDO('mysql:host=localhost;dbname=locationlogement;charset=utf8', 'root', '');
     $reponse = $bdd->query('SELECT * FROM logement');
     while ($donnees = $reponse->fetch()){?>
-
 <div class="results col-12 p-0 mt-5">
     <div class="container">
         <div class="col-12">
@@ -115,7 +114,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=locationlogement;charset=utf8', 'roo
                             <div class="row m-0">
                                 <div class="p-0 col-12">
                                     <small class="col-12 no-padding txt-left p-0"><?= $donnees['logementnt_type']?></small>
-                                    <p class="libelle col-12 no-padding p-0"><?php $donnees['logement_titre']?></p>
+                                    <p class="libelle col-12 no-padding p-0"><?= $donnees['logement_titre']?></p>
                                 </div>
                             </div>
                             <hr>
