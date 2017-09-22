@@ -58,13 +58,14 @@
                         <div>
                             <div class="user__name">Jonathan Rodrigues</div>
                             <div class="user__email">j.rodrigues@alphalives.com</div>
+                            <small>Administrateur</small>
                         </div>
                     </div>
                     <ul class="navigation p-0">
                         <li><a href="/application"> <i class="fa fa-home" aria-hidden="true"></i> Accueil</a></li>
-                        <li><a href="/moncompte"> <i class="fa fa-user" aria-hidden="true"></i> Mon compte</a></li>
-                        <li><a href="/annonces-marques"> <i class="fa fa-bookmark" aria-hidden="true"></i>Mes annonces marqués</a></li>
-                        <li><a href="/login"> <i class="fa fa-power-off" aria-hidden="true"></i>Déconnexion</a></li>
+                        <li><a href="/application/admin"> <i class="fa fa-user" aria-hidden="true"></i> Gestion d'annonces</a></li>
+                        <li><a href="/application/list"> <i class="fa fa-bookmark" aria-hidden="true"></i>Liste des annonces</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -72,10 +73,10 @@
         <div class="container-fluid p-0">
             <?= $this->content ?>
         </div>
-        <footer class="container-fluid">
+        <footer class="container-fluid py-4">
             <div class="row">
                 <div class="container">
-                    <p>&copy; <?= date('Y') ?> by Rodrigues/Curiel. All rights reserved.</p>
+                    <p>&copy; <?= date('Y') ?>Location Logement. Tous droits réservés.</p>
                 </div>
             </div>
         </footer>
