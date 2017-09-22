@@ -1,0 +1,19 @@
+<?php
+$bdd = new PDO('mysql:host=localhost;dbname=locationlogement;charset=utf8', 'root', '');
+$reponse = $bdd->query('SELECT * FROM users');
+while ($donnees = $reponse->fetch()){
+$nom = $donnees['user_nom'];
+$prenom = $donnees['user_prenom'];
+$mail = $donnees['user_mail'];
+$mdp = $donnees['user_mdp'];
+$avatar = $donnees['user_avatar'];
+
+if($mail == $_POST['email'] && $mdp == $_POST['password']){ ?>
+Bonjour <?= $prenom.' '.$nom ?><br>
+<a class="btn btn-success" href="listadmin" role="button">Aller à la liste des logements</a>
+<?php } else { ?>
+<a class="btn btn-success" href="admin" role="button">L'identifiant ou le mot de passe n'est pas correct, veuillez-vous reconnecter.</a>
+<?php
+}
+}?>
+

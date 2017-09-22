@@ -52,5 +52,9 @@ class IndexController extends AbstractActionController
     {
         return new ViewModel();
     }
+    public function validLoginAction()
+    {
+        return new ViewModel();
+    }
 
 }

@@ -57,6 +57,7 @@ return [
             Controller\SupprAdminController::class => InvokableFactory::class,
             Controller\ValidFormController::class => InvokableFactory::class,
             Controller\ModifFormController::class => InvokableFactory::class,
+            Controller\ValidLoginController::class => InvokableFactory::class,
             ],
     ],
     'view_manager' => [
