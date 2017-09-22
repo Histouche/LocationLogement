@@ -5,6 +5,12 @@
         </div>
     </div>
 </div>
+<?php
+
+$bdd = new PDO('mysql:host=localhost;dbname=locationlogement;charset=utf8', 'root', '');
+    $id = $_GET['id'];
+    $reponse = $bdd->query('SELECT * FROM logement WHERE logement_id=".$id.";");
+    while ($donnees = $reponse->fetch()){ ?>
 <div class="fiche col-12">
     <div class="container">
        <div class="row">
@@ -13,19 +19,19 @@
                    <div class="col-12" style="height: 250px;background : url('http://www.eiffage-immobilier.fr/files/live/sites/eiffage-immo/files/contributed/visuels-programmes/appartement-neuf-nice-stella-rocca-diapo4.jpg') center no-repeat;background-size:cover;"></div>
                    <div class="col-12 p-3 general-desc mb-3">
                        <div class="row">
-                           <small class="col-12 type">Appartement</small>
-                           <h2 class="col-12 libelle">Nom du bien</h2>
+                           <small class="col-12 type"><?= $donnees['logementnt_type'] ?></small>
+                           <h2 class="col-12 libelle"><?= $donnees['logement_titre'] ?></h2>
                            <div class="col-12 no-padding txt-left">
-                               <label class="flex"><i class="fa fa-map-marker" aria-hidden="true"></i> Paris 20 (75020)</label>
+                               <label class="flex"><i class="fa fa-map-marker" aria-hidden="true"></i> <?= $donnees['logement_ville'] ?> (<?= $donnees['logement_cp'] ?>)</label>
                            </div>
                            <div class="col-12 no-padding txt-left">
-                               <label> <i class="fa fa-arrows-alt" aria-hidden="true"></i> 30m²</label>
+                               <label> <i class="fa fa-arrows-alt" aria-hidden="true"></i> <?= $donnees['logement_surface'] ?>m²</label>
                            </div>
                            <div class="col-12 no-padding txt-left">
-                               <label> <i class="fa fa-eur" aria-hidden="true"></i> 890 C.C</label>
+                               <label> <i class="fa fa-eur" aria-hidden="true"></i> <?= $donnees['logement_prix'] ?> C.C</label>
                            </div>
                            <div class="col-12 no-padding txt-left">
-                               <label> <i class="fa fa-bed" aria-hidden="true"></i>1 pièce</label>
+                               <label> <i class="fa fa-bed" aria-hidden="true"></i><?= $donnees['logement_nb_piece'] ?> pièce</label>
                            </div>
                        </div>
                    </div>
@@ -33,7 +39,7 @@
                         <div class="row">
                             <div class="col-12 libelle">Description :</div>
                             <p class="col-12">
-                                desc
+                                <?= $donnees['logement_description'] ?>
                             </p>
                         </div>
                    </div>
@@ -97,3 +103,5 @@
        </div>
     </div>
 </div>
+
+<?php } ?>
