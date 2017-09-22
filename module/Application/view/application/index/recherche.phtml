@@ -1,3 +1,41 @@
+<?php
+$sql = "SELECT * FROM logement WHERE 0=0";
+
+if(isset($_POST['appartement'])){
+    $sql.= " AND logementnt_type = 'appartement'";
+}
+if(isset($_POST['maison'])){
+    $sql.= " AND logementnt_type = 'maison'";
+}
+
+
+if(isset($_POST['loyer-max'])&& $_POST['loyer-max'] != ""){
+    $sql.= " AND logement_prix <= ".$_POST['loyer-max']."";
+}
+
+
+if(isset($_POST['surface-max'])&& $_POST['surface-max'] != ""){
+    $sql.= " AND logement_surface <= ".$_POST['surface-max']."";
+}
+
+
+if(isset($_POST['pieces-max']) && $_POST['pieces-max'] != ""){
+    $sql.= " AND logement_nb_piece <= ".$_POST['pieces-max']."";
+}
+
+if(isset($_POST['meuble'])){
+    $sql.= " AND logement_meuble = 'oui' ";
+}
+
+if(isset($_POST['region'])){
+    $sql.= " AND logement_region = '".$_POST['region']."'";
+}
+echo $sql;
+
+?>
+
+
+
 <form action="recherche" method="post">
 <div class="col-12 recherche p-0">
     <div class="container pb-5">
@@ -89,11 +127,9 @@
 </form>
 
 <?php
-
 $bdd = new PDO('mysql:host=localhost;dbname=locationlogement;charset=utf8', 'root', '');
-    $reponse = $bdd->query('SELECT * FROM logement');
+    $reponse = $bdd->query($sql);
     while ($donnees = $reponse->fetch()){?>
-
 <div class="results col-12 p-0 mt-5">
     <div class="container">
         <div class="col-12">
@@ -101,14 +137,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=locationlogement;charset=utf8', 'roo
                 <a href="/application/fiche?id=<?= $donnees['logement_id'];?>" class="col-12 p-0 result-link">
                     <div id="programme-liste-1" class="col-12 flex result-box row mb-4 pl-0" style="height: 277px;">
                         <div class="col-12 col-sm-4 float-left search-img" style="background : url('http://www.eiffage-immobilier.fr/files/live/sites/eiffage-immo/files/contributed/visuels-programmes/appartement-neuf-nice-stella-rocca-diapo4.jpg') center no-repeat;background-size:cover;"></div>
-                        <?php
-                        if($donnees['logementnt_type'] == 'Appartement'){
-                            ?> <span style="color: #3F51B5;font-size :40px !important;position: absolute;right:15px;top:15px;" class="icon-appartement padding-top-10"></span><?php
-                        }
-                        else {
-                            ?><span style="color: #3F51B5;font-size :40px !important;position: absolute;right:15px;top:15px;" class="icon-maison padding-top-10"></span><?php
-                        }
-                        ?>
+                        <span style="color: #3F51B5;font-size :40px !important;position: absolute;right:15px;top:15px;" class="icon-appartement padding-top-10"></span>
                         <div class="col-12 col-sm-8 float-left details p-3">
                             <div class="row m-0">
                                 <div class="p-0 col-12">
