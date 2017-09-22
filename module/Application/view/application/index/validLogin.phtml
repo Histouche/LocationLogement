@@ -1,6 +1,6 @@
 <?php
 $bdd = new PDO('mysql:host=localhost;dbname=locationlogement;charset=utf8', 'root', '');
-$reponse = $bdd->query('SELECT * FROM users');
+$reponse = $bdd->query("SELECT * FROM users WHERE user_mail = '".$_POST['email']."'");
 while ($donnees = $reponse->fetch()){
 $nom = $donnees['user_nom'];
 $prenom = $donnees['user_prenom'];
@@ -12,8 +12,7 @@ if($mail == $_POST['email'] && $mdp == $_POST['password']){ ?>
 Bonjour <?= $prenom.' '.$nom ?><br>
 <a class="btn btn-success" href="listadmin" role="button">Aller à la liste des logements</a>
 <?php } else { ?>
-<a class="btn btn-success" href="admin" role="button">L'identifiant ou le mot de passe n'est pas correct, veuillez-vous reconnecter.</a>
-<?php
-}
-}?>
+<a class="btn btn-success" href="admin" role="button">L'identifiant et/ou le mot de passe n'est pas correct, veuillez-vous reconnecter.</a>
+<?php } ?>
+<?php }?>
 

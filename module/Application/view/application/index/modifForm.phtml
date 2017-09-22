@@ -10,7 +10,6 @@ $dbname = "locationlogement";
 $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $sql = "UPDATE logement SET logement_titre = '".$_POST['titre']."', logement_image = '".$_POST['image']."', logement_adresse = '".$_POST['adresse']."', logement_ville = '".$_POST['ville']."', logement_cp = '".$_POST['cp']."', logement_surface = '".$_POST['surface']."', logement_nb_piece = '".$_POST['nbpiece']."', logement_meuble = '".$_POST['meuble']."', logement_prix = '".$_POST['prix']."', logement_description = '".$_POST['description']."', logement_region = '".$_POST['region']."', logementnt_type = '".$_POST['type']."' WHERE logement_id = '".$_GET['id']."'";
-echo $conn->exec($sql);
 
 
 ?>
