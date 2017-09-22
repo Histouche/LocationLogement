@@ -6,10 +6,9 @@
     </div>
 </div>
 <?php
-
-$bdd = new PDO('mysql:host=localhost;dbname=locationlogement;charset=utf8', 'root', '');
     $id = $_GET['id'];
-    $reponse = $bdd->query('SELECT * FROM logement WHERE logement_id=".$id.";");
+$bdd = new PDO('mysql:host=localhost;dbname=locationlogement;charset=utf8', 'root', '');
+    $reponse = $bdd->query("SELECT * FROM logement WHERE logement_id=".$id.";");
     while ($donnees = $reponse->fetch()){ ?>
 <div class="fiche col-12">
     <div class="container">
